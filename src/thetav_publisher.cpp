@@ -80,7 +80,7 @@ publish_image (GstMapInfo map)
     // image.height = 1920;
     image.encoding = "rgb8";
     image.is_bigendian = false;
-    image.step = dataLength;
+    image.step = dataLength / image.height;
 
     std::vector<unsigned char> values(rdata, (unsigned char *)rdata + dataLength);
     image.data = values;
